@@ -20,6 +20,14 @@ app.use(express.urlencoded({
 app.use(express.static("public"))
 app.use(cookieParser);
 
+//import routes
+import userRouter from './routes/user.routes.js'
+
+//routes declarartion
+app.use("/api/v1/users",userRouter)
+
+//matlab jab ki koi ye call krega router pr chal jaaiga fir aage ka vha match hoga 
+//matlab userRouter ke pich ye lag ke total url benga
 
 
 export {app}
